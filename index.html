@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
+        <script src="data/CARANTIGO_11.js"></script>
+        <script src="data/GEOECARNOVO_12.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-12.035009107077533,-57.051682806316336],[-11.921854898784852,-56.81386499025903]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_1998_10_02_0');
+        map.getPane('pane_1998_10_02_0').style.zIndex = 400;
+        var img_1998_10_02_0 = 'data/1998_10_02_0.png';
+        var img_bounds_1998_10_02_0 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_1998_10_02_0 = new L.imageOverlay(img_1998_10_02_0,
+                                              img_bounds_1998_10_02_0,
+                                              {pane: 'pane_1998_10_02_0'});
+        bounds_group.addLayer(layer_1998_10_02_0);
+        map.addLayer(layer_1998_10_02_0);
+        map.createPane('pane_1999_07_25_1');
+        map.getPane('pane_1999_07_25_1').style.zIndex = 401;
+        var img_1999_07_25_1 = 'data/1999_07_25_1.png';
+        var img_bounds_1999_07_25_1 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_1999_07_25_1 = new L.imageOverlay(img_1999_07_25_1,
+                                              img_bounds_1999_07_25_1,
+                                              {pane: 'pane_1999_07_25_1'});
+        bounds_group.addLayer(layer_1999_07_25_1);
+        map.createPane('pane_2000_07_27_2');
+        map.getPane('pane_2000_07_27_2').style.zIndex = 402;
+        var img_2000_07_27_2 = 'data/2000_07_27_2.png';
+        var img_bounds_2000_07_27_2 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2000_07_27_2 = new L.imageOverlay(img_2000_07_27_2,
+                                              img_bounds_2000_07_27_2,
+                                              {pane: 'pane_2000_07_27_2'});
+        bounds_group.addLayer(layer_2000_07_27_2);
+        map.createPane('pane_2001_10_02_3');
+        map.getPane('pane_2001_10_02_3').style.zIndex = 403;
+        var img_2001_10_02_3 = 'data/2001_10_02_3.png';
+        var img_bounds_2001_10_02_3 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2001_10_02_3 = new L.imageOverlay(img_2001_10_02_3,
+                                              img_bounds_2001_10_02_3,
+                                              {pane: 'pane_2001_10_02_3'});
+        bounds_group.addLayer(layer_2001_10_02_3);
+        map.createPane('pane_2002_09_03_4');
+        map.getPane('pane_2002_09_03_4').style.zIndex = 404;
+        var img_2002_09_03_4 = 'data/2002_09_03_4.png';
+        var img_bounds_2002_09_03_4 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2002_09_03_4 = new L.imageOverlay(img_2002_09_03_4,
+                                              img_bounds_2002_09_03_4,
+                                              {pane: 'pane_2002_09_03_4'});
+        bounds_group.addLayer(layer_2002_09_03_4);
+        map.createPane('pane_2003_09_14_5');
+        map.getPane('pane_2003_09_14_5').style.zIndex = 405;
+        var img_2003_09_14_5 = 'data/2003_09_14_5.png';
+        var img_bounds_2003_09_14_5 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2003_09_14_5 = new L.imageOverlay(img_2003_09_14_5,
+                                              img_bounds_2003_09_14_5,
+                                              {pane: 'pane_2003_09_14_5'});
+        bounds_group.addLayer(layer_2003_09_14_5);
+        map.createPane('pane_2004_08_15_6');
+        map.getPane('pane_2004_08_15_6').style.zIndex = 406;
+        var img_2004_08_15_6 = 'data/2004_08_15_6.png';
+        var img_bounds_2004_08_15_6 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2004_08_15_6 = new L.imageOverlay(img_2004_08_15_6,
+                                              img_bounds_2004_08_15_6,
+                                              {pane: 'pane_2004_08_15_6'});
+        bounds_group.addLayer(layer_2004_08_15_6);
+        map.createPane('pane_2005_07_17_7');
+        map.getPane('pane_2005_07_17_7').style.zIndex = 407;
+        var img_2005_07_17_7 = 'data/2005_07_17_7.png';
+        var img_bounds_2005_07_17_7 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2005_07_17_7 = new L.imageOverlay(img_2005_07_17_7,
+                                              img_bounds_2005_07_17_7,
+                                              {pane: 'pane_2005_07_17_7'});
+        bounds_group.addLayer(layer_2005_07_17_7);
+        map.createPane('pane_2006_09_06_8');
+        map.getPane('pane_2006_09_06_8').style.zIndex = 408;
+        var img_2006_09_06_8 = 'data/2006_09_06_8.png';
+        var img_bounds_2006_09_06_8 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2006_09_06_8 = new L.imageOverlay(img_2006_09_06_8,
+                                              img_bounds_2006_09_06_8,
+                                              {pane: 'pane_2006_09_06_8'});
+        bounds_group.addLayer(layer_2006_09_06_8);
+        map.createPane('pane_2007_08_08_9');
+        map.getPane('pane_2007_08_08_9').style.zIndex = 409;
+        var img_2007_08_08_9 = 'data/2007_08_08_9.png';
+        var img_bounds_2007_08_08_9 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2007_08_08_9 = new L.imageOverlay(img_2007_08_08_9,
+                                              img_bounds_2007_08_08_9,
+                                              {pane: 'pane_2007_08_08_9'});
+        bounds_group.addLayer(layer_2007_08_08_9);
+        map.createPane('pane_2008_05_22_10');
+        map.getPane('pane_2008_05_22_10').style.zIndex = 410;
+        var img_2008_05_22_10 = 'data/2008_05_22_10.png';
+        var img_bounds_2008_05_22_10 = [[-12.046403131094953,-56.969190196349345],[-11.912900065771408,-56.883177691714565]];
+        var layer_2008_05_22_10 = new L.imageOverlay(img_2008_05_22_10,
+                                              img_bounds_2008_05_22_10,
+                                              {pane: 'pane_2008_05_22_10'});
+        bounds_group.addLayer(layer_2008_05_22_10);
+        function pop_CARANTIGO_11(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOMESPROPR'] !== null ? autolinker.link(feature.properties['NOMESPROPR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NUMEROESTA'] !== null ? autolinker.link(feature.properties['NUMEROESTA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CODIGO_CAR'] !== null ? autolinker.link(feature.properties['CODIGO_CAR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PROTOCOLO'] !== null ? autolinker.link(feature.properties['PROTOCOLO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NOMEPROPRI'] !== null ? autolinker.link(feature.properties['NOMEPROPRI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ATIVIDADE'] !== null ? autolinker.link(feature.properties['ATIVIDADE'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SITUACAO'] !== null ? autolinker.link(feature.properties['SITUACAO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['APF_NUMERO'] !== null ? autolinker.link(feature.properties['APF_NUMERO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NUMERO_ART'] !== null ? autolinker.link(feature.properties['NUMERO_ART'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MIGRACAO_I'] !== null ? autolinker.link(feature.properties['MIGRACAO_I'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CODIGO'] !== null ? autolinker.link(feature.properties['CODIGO'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['REQUERIMEN'] !== null ? autolinker.link(feature.properties['REQUERIMEN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MUNICIPIO_'] !== null ? autolinker.link(feature.properties['MUNICIPIO_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['MODULOS_FI'] !== null ? autolinker.link(feature.properties['MODULOS_FI'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CRUZA_TERR'] !== null ? autolinker.link(feature.properties['CRUZA_TERR'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CRUZA_AREA'] !== null ? autolinker.link(feature.properties['CRUZA_AREA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['PERCENTUAL'] !== null ? autolinker.link(feature.properties['PERCENTUAL'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['AREA_HA'] !== null ? autolinker.link(feature.properties['AREA_HA'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_CARANTIGO_11_0() {
+            return {
+                pane: 'pane_CARANTIGO_11',
+                opacity: 1,
+                color: 'rgba(51,158,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(72,222,255,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_CARANTIGO_11');
+        map.getPane('pane_CARANTIGO_11').style.zIndex = 411;
+        map.getPane('pane_CARANTIGO_11').style['mix-blend-mode'] = 'normal';
+        var layer_CARANTIGO_11 = new L.geoJson(json_CARANTIGO_11, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_CARANTIGO_11',
+            layerName: 'layer_CARANTIGO_11',
+            pane: 'pane_CARANTIGO_11',
+            onEachFeature: pop_CARANTIGO_11,
+            style: style_CARANTIGO_11_0,
+        });
+        bounds_group.addLayer(layer_CARANTIGO_11);
+        map.addLayer(layer_CARANTIGO_11);
+        function pop_GEOECARNOVO_12(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['parcela_co'] !== null ? autolinker.link(feature.properties['parcela_co'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['rt'] !== null ? autolinker.link(feature.properties['rt'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['art'] !== null ? autolinker.link(feature.properties['art'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['situacao_i'] !== null ? autolinker.link(feature.properties['situacao_i'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['codigo_imo'] !== null ? autolinker.link(feature.properties['codigo_imo'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['data_submi'] !== null ? autolinker.link(feature.properties['data_submi'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['data_aprov'] !== null ? autolinker.link(feature.properties['data_aprov'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['status'] !== null ? autolinker.link(feature.properties['status'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nome_area'] !== null ? autolinker.link(feature.properties['nome_area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['registro_m'] !== null ? autolinker.link(feature.properties['registro_m'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['registro_d'] !== null ? autolinker.link(feature.properties['registro_d'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['municipio_'] !== null ? autolinker.link(feature.properties['municipio_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['uf_id'] !== null ? autolinker.link(feature.properties['uf_id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_GEOECARNOVO_12_0() {
+            return {
+                pane: 'pane_GEOECARNOVO_12',
+                opacity: 1,
+                color: 'rgba(255,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_GEOECARNOVO_12');
+        map.getPane('pane_GEOECARNOVO_12').style.zIndex = 412;
+        map.getPane('pane_GEOECARNOVO_12').style['mix-blend-mode'] = 'normal';
+        var layer_GEOECARNOVO_12 = new L.geoJson(json_GEOECARNOVO_12, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_GEOECARNOVO_12',
+            layerName: 'layer_GEOECARNOVO_12',
+            pane: 'pane_GEOECARNOVO_12',
+            onEachFeature: pop_GEOECARNOVO_12,
+            style: style_GEOECARNOVO_12_0,
+        });
+        bounds_group.addLayer(layer_GEOECARNOVO_12);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/GEOECARNOVO_12.png" /> GEO E CAR NOVO': layer_GEOECARNOVO_12,'<img src="legend/CARANTIGO_11.png" /> CAR ANTIGO': layer_CARANTIGO_11,"2008_05_22": layer_2008_05_22_10,"2007_08_08": layer_2007_08_08_9,"2006_09_06": layer_2006_09_06_8,"2005_07_17": layer_2005_07_17_7,"2004_08_15": layer_2004_08_15_6,"2003_09_14": layer_2003_09_14_5,"2002_09_03": layer_2002_09_03_4,"2001_10_02": layer_2001_10_02_3,"2000_07_27": layer_2000_07_27_2,"1999_07_25": layer_1999_07_25_1,"1998_10_02": layer_1998_10_02_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        L.ImageOverlay.include({
+            getBounds: function () {
+                return this._bounds;
+            }
+        });
+        </script>
+    </body>
+</html>
